@@ -1,0 +1,53 @@
+\documentclass[11pt]{article}
+%Gummi|065|=)
+\usepackage[utf8]{inputenc}
+\title{\textbf{Explica la operaciòn de los circuitos de activaciòn con tiristores en convertidores CA-CD Y CA-CA}}
+\author{Cabrera Gutièrrez Raùl\\
+		Mecatronica 4ªA\\
+		Sistemas elèctronicos de interfaz}
+\date{24/SEP/2019 }
+\usepackage{graphicx}
+\begin{document}
+
+\maketitle 
+
+
+\section{¿Què es un tiristor?}
+
+El tiristor es un semiconductor de potencia que se utiliza como interruptor, ya sea para conducir o interrumpir la corriente eléctrica, a este componente se le conoce como de potencia por que se utilizan para manejar grandes cantidades de corriente y voltaje, a comparación de los otros semiconductores que manejan cantidades relativamente bajas.
+El circuito de disparo o excitación de compuerta de los tiristores, es una parte integral del convertidor de potencia. La salida de un convertidor, que depende de la forma en que el circuito de disparo excita a los dispositivos de conmutación (tiristores), es una función directa del proceso de cómo se desarrolla la conmutación. Podemos decir entonces que los circuitos de disparo, son elementos claves para obtener la salida deseada y cumplir con los objetivos del “sistema de control”, de cualquier convertidor de energía eléctrica.
+\\ 
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.20]{/home/raulcb/Downloads/scr 7.png}
+\caption{.}
+\label{.}
+\end{figure}
+
+
+
+El diseño de un circuito excitador, requiere el conocimiento de las características eléctricas de compuerta del tiristor específico, que se va a utilizar en el circuito principal de conmutación. Para convertidores, donde los requisitos del control no son exigentes, puede resultar conveniente diseñarlo con circuitos discretos. En aquellos convertidores donde se necesita la activación de compuerta con control de avance, alta velocidad, alta eficiencia y que además sean compactos, los circuitos integrados para activación de compuerta que se disponen comercialmente, son más conveniente. Las partes componentes de un circuito de disparo para tiristores usados en los rectificadores controlados por fase, a frecuencia industrial, son los siguientes: El circuito sincronizador, el circuito base de tiempo para retrasar el disparo, el circuito conformador del pulso, el circuito amplificador del pulso (opcional), el circuito aislador y finalmente el circuito de protección de la compuerta del tiristor. 
+
+Cuando se habla de tiristores comúnmente se cataloga al tiristor como un SRC (silicon controlled rectifier), pero esto no es del todo correcto ya que este tipo es el más popular y conocido pero no es el único que existe.
+
+\section{Activacion del tiristor (SCR) en corriente contínua}
+En el gráfico se ve una aplicación sencilla del tiristor en corriente continua. El tiristor se comporta como un circuito abierto hasta que activa su compuerta (GATE) con un pulso de tensión que causa una pequeña corriente. (se cierra momentáneamente el interruptor S). El tiristor conduce y se mantiene conduciendo, no necesitando de ninguna señal adicional para mantener la conducción. No es posible desactivar el tiristor (que deje de conducir) con la compuerta.
+\\
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.50]{/home/raulcb/Downloads/tiristor-corriente-continua.png}
+\caption{.}
+\label{.}
+\end{figure}
+\\
+
+\section{Características del pulso de disparo}
+La duración del pulso aplicado a la compuerta G debe ser lo suficientemente largo para asegurar que la corriente de ánodo se eleve hasta el valor de retención. Otro aspecto importante a tomar en cuenta es la amplitud del pulso, que influye en la duración de éste.
+
+\section{Desactivación de un tiristor}
+
+El tiristor una vez activado, se mantiene conduciendo, mientras la corriente de ánodo (IA) sea mayor que la corriente de mantenimiento (IH). Normalmente la compuerta (G) no tiene control sobre el tiristor una vez que este está conduciendo.
+
+
+\end{document}
