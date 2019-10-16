@@ -1,0 +1,38 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+%Gummi|065|=)
+\title{\textbf{Giro de un moro de corriente directa}}
+\author{Cabrera Gutièrrez Raùl}
+\date{15-0ct-2019}
+\usepackage{graphicx}
+\begin{document}
+
+\maketitle
+
+\section{Motor DC}
+ Los motores de Corriente Directa o motor DC(correspondiente a las iniciales en inglés “direct current”) es también conocidos como motor de Corriente Continua o motor CC, son  muy utilizados en diseños de ingeniería debido a las características torque-velocidad que poseen con diferentes configuraciones eléctricas o mecánicas.
+ \\
+ Una gran ventaja de los motores de CD se debe a que es posible controlarlos con suavidad y en la mayoría de los casos son reversibles, responden rápidamente gracias a que cuentan con una gran razón de torque a la inercia del rotor. 
+ \\
+ Otra ventaja es la implementación del frenado dinámico, donde la energía generada por el motor se alimenta a un resistor disipador, y el frenado regenerativo donde la energía generada por el motor retroalimenta al suministro de potencia CD, esto es muy utilizado en aplicaciones donde se deseen frenados rápidos y de gran eficiencia.
+ \begin{figure}[htp]
+\centering
+\includegraphics[scale=.50]{/home/raulcb/Downloads/images.jpeg}
+\caption{.}
+\label{.}
+\end{figure}
+
+\section{Control del sentido de giro del motor}
+El control del sentido de giro se realix¡za por medio de un circuito conocido como "puete H".
+Pra el control de velocidad de motores de corriente directa se utiliza en general la tècnica conocida como PWM o Pulse Wide Modulation. El mètodo consiste en el switcheo ràpido (alrededor de 20khz) de la fuente de alimentaciòn del motor, proporcionado a èste una potencia promedio controlada mediante el ancho de los pulsos.
+\\
+Bàsicamente es un circuito electrònico que permite invertir el sentido de la corriente directa en el motor, cambiando de esta forma su direcciòn de giro.
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=.50]{/home/raulcb/Downloads/H-BRIDGE.jpg}
+\caption{.}
+\label{.}
+\end{figure}
+
+
+\end{document}
