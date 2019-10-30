@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage [utf8]{inputenc}
+\usepackage{fourier}
+%Gummi|065|=)
+\title{\textbf{Calcular los parametros de circuitos de activación de transistores de potencia}}
+\author{Cabrera Gutièrrez Raùl
+\\ Mecatrònica 4ª
+\\
+Sistemas electrònicos de interfaz}
+\date{}
+\begin{document}
+
+\maketitle
+
+\section{Transistor de potencia}
+
+ El transistor de potencia es un dispòsitivo electrònico semiconductor utilizado para entregar una señal de salida en respuesta a una señal de entrada. Cumple funciones de amplificador, oscilador, conmutador o rectificador.
+ El tèrmino "transistor" es la contracciòn en inglès de transfer resistor.
+\section{Càlculos}
+Par este proceso de los càlculos es necesario conocer cada uno de los datos "datasheet" para saber como funciona y de que forma trabaja.
+
+Datos del TIP41:\\
+\begin{itemize}
+\item Ic: (max=6A, min= 25mA.)
+\item Ib: (max=3A, min=15mA)
+\item PTOT=65W\\
+\item HFE: 15 a 75\\
+\item VCE: 4v\\
+\item VEBO: 5V\\
+\item VCEO: 100V\\
+\item VCBO: 100V\\
+\end{itemize}
+
+
+Ya que se han obtenido los datos, se comienzan los càlculos.
+\\
+Se comienza encontrando los valores de RB, tomando en cuenta las base del transistor  esta conectado de froma directa al transistor de corriente.
+\\
+Utilizamos lo siguiente:
+
+$$ R_{B}=\frac{V_{cc}-V_{D12}}{ \frac{Ic}{HFE} } $$
+
+Para lo cual tenemos que sustituir los valores ya puestos.
+\\
+$$ R_{B}=\frac{9v-1.4v}{ \frac{0.52}{75}}= 1,134.33\Omega $$
+\\
+
+Lo dejamos en 1200ohms
+
+Con el valor de la primer resistencia proceguiremos en sacar el valor de la segunda.
+
+
+$$ RC=V_CB+V_CC-I_C=V/I $$
+
+Queda un poco màs claro como es el comportamiento de la entrada y esto ayuda a que no se sature lo que se va a conectar en 127v.
+
+$$ R_{C}=V_{CB}+V_{CC}-I_{C}=7.6v/0.52mA= 146.15\Omega $$
+
+Quedando en 150ohms
+
+Ya conlos dos valores obtenidos de las resistencias ya que tiene que funcionar el transistor como switch, en esta parte tenemos claro que con cuanto trabaja la base y la del emisor.
+\\
+seguimos con el Ic 
+
+$$ I_{C}=\frac{V_{CC}-V_{CE}}{R_{B}} $$
+
+Para esta parte solo trabajamos en la reaccion de la transmicion de la corriente.
+
+$$ I_{C}=\frac{9v-4v}{146.15\Omega}= 34.2mA $$
+
+
+Ahora tenemos que sacar la corriente de la baseosea, la corriente que reciba el IB tiene que ser sufuciente para que est eactue comop swuich.
+
+$$ I_{B}=\frac{V_{CBO}-V_{D12}-V_{EBO}}{R_{B}} $$
+
+
+Tenemos que ver la corriente que va a recibir la base, para la activacion de emisor, asi que:
+
+
+$$ I_{B}=\frac{100V-1.4V-5V}{1,134.33\Omega}= 0.082mA $$
+
+Esta siendo la corriente que recibe para que encienda el emisor
+
+
+Ahora la corriente con la que encendera el emisor en lo mas minimo.
+$$ I_{C}=\frac{V_{CC}-V_{EBO}-V_{D12}}{R_{C}} $$
+
+Esto nos ayuda a tener mayor control ya que se regula el voltaje antes de llegar a la base del transistor.
+
+
+$$ I_{C}=\frac{9V-5V-1.4V}{1,134.33\Omega}= 2.3mA $$
+
+Para otra parte se debe ver la potencia con la que se estara trabajando.
+
+$$ P=R_{C}*I_{B}^{2} $$
+
+
+Es solo la ley de Ohm, y queda de esta manera
+
+
+$$ P= 1,134.33\Omega*82mA^{2}= 7.63\omega $$
+
+
+
+
+
+
+\end{document}
